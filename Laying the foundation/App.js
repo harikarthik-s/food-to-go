@@ -14,6 +14,7 @@ const HeadingComponent = () => {
 const ContainerComponent = () => (
   <div id="container">
     <HeadingComponent />
+    {HeadingComponent()}
     {elem}
     <p className="para">Hi there </p>
     <p> Love you {3 * 100 * 10} </p>
@@ -27,5 +28,17 @@ const Main = () => (
   </div>
 );
 
+const MainComponent = () => (
+  <>
+    {elem}
+    <p className="para">Hi there </p>
+  </>
+);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<ContainerComponent />);
+root.render(
+  <>
+    <ContainerComponent />
+    <MainComponent />
+  </>
+);
