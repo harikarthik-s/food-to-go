@@ -105,15 +105,15 @@ const Body = () => {
         <button type="button" className="filter-btn" onClick={()=>{
           const allrestoList = resList;
           setrestoList(allrestoList);
-        }}>All Restaurants</button>
+        }}>All Restaurants</button> 
         <button type="button" className="filter-btn" onClick={()=>{
           const filteredrestoList = restoList.filter((restaurant)=> restaurant.data.avgRating > 4);
           setrestoList(filteredrestoList);
-        }}>Top Rated Restaurants</button>
+        }}>Top Rated Restaurants</button> 
         <button type="button" className="filter-btn" onClick={()=>{
           const nearrestoList = restoList.filter((restaurant)=> (restaurant.data.deliveryTime < 30));
           setrestoList(nearrestoList);
-        }}>Near me</button>
+        }}>Near me</button> 
       </div>
       <div className="restro-container">
         {restoList.map((restaurant, index) => (
