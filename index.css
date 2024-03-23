@@ -41,6 +41,7 @@ body{
     list-style-type: none;
     gap: 5rem;
     font-size: 1rem;
+
     :hover{
         font-weight: 800;
         text-decoration: underline;
@@ -111,16 +112,16 @@ body{
     border: 1px solid white;
     transition: .3s;
 
+    :hover{
+        border: 1px solid black;
+        box-shadow: 10px 15px 20px #f0f0f0;
+        transform: scale(1.10);
+        transition: .3s;
+    }
+
     h4{
         font-size: .7rem;
     }
-}
-
-.res-card:hover{
-    border: 1px solid black;
-    box-shadow: 10px 15px 20px #f0f0f0;
-    transform: scale(1.10);
-    transition: .3s;
 }
 
 .res-logo{
