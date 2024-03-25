@@ -129,3 +129,26 @@ body{
     height: 200px;
 }
 
+.shimmer-image{
+    width: 700px;
+    height: 700px;
+    background-color: #8080803c;
+}
+
+.shimmer-container{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shimmer-card{
+    width: 200px;
+    height: 400px;
+    margin: 5px;
+    padding: 1.3rem;
+    border-radius: 10px;
+    background-color: #8080803c;
+}
