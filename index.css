@@ -65,7 +65,8 @@ body{
 }
 
 .search{
-    padding: 10px;
+    height:50px;
+    margin-bottom:20px
 }
 
 .body-img{
@@ -156,4 +157,14 @@ body{
 .login-btn{
    padding: 0 10px;
    cursor: pointer;
+}
+
+.search-btn{
+    padding: 10px;
+    cursor: pointer;
+}
+
+.search-box{
+    padding:10px;
+    
 }
