@@ -152,3 +152,8 @@ body{
     border-radius: 10px;
     background-color: #8080803c;
 }
+
+.login-btn{
+   padding: 0 10px;
+   cursor: pointer;
+}

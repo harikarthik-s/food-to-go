@@ -19,16 +19,17 @@ const Body = () => {
 
     const json = await data.json();
 
-    // console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
-    // console.log(resList);
+    // optional chaining
     setrestoList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
 
-  if(restoList.length === 0) {
-    return <Shimmer/>
-  }
-
-  return (
+  //Conditional Rendering
+  // if(restoList.length === 0) {
+  //   return <Shimmer/>
+  // }
+  
+  //Conditional Rendering
+  return restoList.length == 0? <Shimmer/> : (
     <div className="body">
       <img src={logo} alt="img" className="body-img"/>
       <h1>Restaurants Near me</h1>
