@@ -5,46 +5,7 @@ import logo from "../utils/logo.png";
 import Shimmer from "./Shimmer";
 
 //State Variable - we use React HOOK - useState(), useEffect() - utility function given by React
-// const [resList] = useState([
-//   {
-//     data: {
-//       id: "121603",
-//       name: "Kannur Food Point",
-//       cloudinaryImageId: "bmwn4n4bn6n1tcpc8x2h",
-//       cuisines: ["Kerala", "Chinese"],
-//       deliveryTime: 24,
-//       avgRating: "3.9",
-//     },
-//   },
-//   {
-//     data: {
-//       id: "229",
-//       name: "Meghana Foods",
-//       cloudinaryImageId: "xqwpuhgnsaf18te7zvtv",
-//       cuisines: [
-//         "Biryani",
-//         "Andhra",
-//         "South Indian",
-//         "North Indian",
-//         "Chinese",
-//         "Seafood",
-//       ],
-//       deliveryTime: 16,
-//       avgRating: "4.4",
-//     }
-//   },
-//   {
-//     data: {
-//       id: "428",
-//       name: "Biryani Pot",
-//       cloudinaryImageId: "mdipoyzfzsa7n7igskht",
-//       cuisines: ["North Indian", "Biryani"],
-//       deliveryTime: 19,
-//       avgRating: "3.9"
-//     }
-//   }
-// ])
-
+// const [resList] = useState([])
 
 const Body = () => {
   const [restoList, setrestoList] = useState([]); 
