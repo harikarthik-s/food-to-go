@@ -4,4 +4,7 @@ export const CDN_URL =
 export const LOGO_URL =
   "https://campsouthafrica.com/wp-content/uploads/2020/03/meals-included-icon.png";
 
+export const API_URL =
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.624480699999999&page_type=DESKTOP_WEB_LISTING";
+
 //Named export

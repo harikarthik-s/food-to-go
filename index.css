@@ -97,10 +97,11 @@ body{
 
 .restro-container{
     padding: 20px;
+    margin-left:50px;
     display: flex;
     flex-wrap: wrap;
     gap:25px;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 

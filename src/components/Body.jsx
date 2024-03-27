@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 // import resList from "../utils/mockData";
 import logo from "../utils/logo.png";
 import Shimmer from "./Shimmer";
+import { API_URL } from "../utils/constants";
 
 //State Variable - we use React HOOK - useState(), useEffect() - utility function given by React
 // const [resList] = useState([])
@@ -10,23 +11,23 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   const [restoList, setrestoList] = useState([]);
   const [filteredrestoList, setfilteredrestoList] = useState([]);
-  const [loading, setloading] = useState(true);
   const [searchText, setsearchText] = useState("");
 
   useEffect(() => {
     fetchData();
-  })
+  }, []);
 
   const fetchData = async () => {
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.624480699999999&page_type=DESKTOP_WEB_LISTING");
-
+    const data = await fetch(`${API_URL}`);
     const json = await data.json();
 
     // optional chaining
-    setrestoList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setfilteredrestoList(restoList);
-    console.log("Body Rendered")
-  }
+    setrestoList(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setfilteredrestoList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    console.log("Body Rendered");
+  };
 
   //Conditional Rendering
   // if (restoList.length === 0) {
@@ -34,42 +35,84 @@ const Body = () => {
   // }
 
   //Conditional Rendering
-  return filteredrestoList.length === 0 ? <Shimmer/> :(
+  return filteredrestoList.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
-      <img src={logo} alt="img" className="body-img"/>
+      <img src={logo} alt="img" className="body-img" />
       <h1>Restaurants Near me</h1>
 
       <div className="search">
-        <input type="text" className="search-box" placeholder="Search for restaurants" value={searchText} 
-               onChange={(e) => setsearchText(e.target.value)} />
-        <button className="search-btn" onClick={
-          ()=>{
-            setfilteredrestoList(restoList.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase())))
-          }
-        }>Search</button>
+        <input
+          type="text"
+          className="search-box"
+          placeholder="Search for restaurants"
+          value={searchText}
+          onChange={(e) => setsearchText(e.target.value)}
+        />
+        <button
+          className="search-btn"
+          onClick={() => {
+            setfilteredrestoList(
+              restoList.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              )
+            );
+          }}
+        >
+          Search
+        </button>
       </div>
 
       <div className="filter">
         <p>Filter:</p>
-        <button type="button" className="filter-btn" onClick={()=>{
-          setfilteredrestoList(restoList);
-        }}>All Restaurants</button> 
-        <button type="button" className="filter-btn" onClick={()=>{
-          const filteredrestoList = restoList.filter((restaurant)=> restaurant?.info?.avgRating > 4);
-          setfilteredrestoList(filteredrestoList);
-        }}>Top Rated Restaurants</button> 
-        <button type="button" className="filter-btn" onClick={()=>{
-          const nearrestoList = restoList.filter((restaurant)=> (restaurant?.info?.sla?.deliveryTime < 30));
-          setfilteredrestoList(nearrestoList);
-        }}>Near me</button>   
+        <button
+          type="button"
+          className="filter-btn"
+          onClick={() => {
+            setfilteredrestoList(restoList);
+          }}
+        >
+          All Restaurants
+        </button>
+
+        <button
+          type="button"
+          className="filter-btn"
+          onClick={() => {
+            const filteredrestoList = restoList.filter(
+              (restaurant) => restaurant?.info?.avgRating > 4
+            );
+            setfilteredrestoList(filteredrestoList);
+          }}
+        >
+          Top Rated Restaurants
+        </button>
+
+        <button
+          type="button"
+          className="filter-btn"
+          onClick={() => {
+            const nearrestoList = restoList.filter(
+              (restaurant) => restaurant?.info?.sla?.deliveryTime < 30
+            );
+            setfilteredrestoList(nearrestoList);
+          }}
+        >
+          Near me
+        </button>
+
       </div>
+
       <div className="restro-container">
         {filteredrestoList.map((restaurant, index) => (
           <RestaurantCard key={restaurant?.info?.id} resData={restaurant} />
           // <RestaurantCard key={index} resData={restaurant} />    //using index is not recommended. <<< unique keys
+
         ))}
       </div>
-    </div >
+
+    </div>
   );
 };
 
