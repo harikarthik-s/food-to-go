@@ -1,11 +1,15 @@
 .header{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     border: none;
-    border-bottom: 1px solid black;
-    padding: 0px 20px;
-    margin-bottom: 5px;
+    /* border-bottom: 1px solid black; */
+    margin-bottom: 50px;
+    box-shadow: 0 15px 40px -20px rgba(40,44,63,.15);
+    position: fixed;
+    background-color: white;
+    width:100%;
+    z-index:100;
 }
 
 a{
@@ -15,9 +19,10 @@ a{
 
 .logo-container{
     display: flex;
-    width: 300px;
-    gap: 20px;
+    width: 250px;
+    gap: 10px;
     align-items: center;
+    justify-content: center;
 
     p{
         color: #ff9100;
@@ -36,13 +41,19 @@ a{
     display: flex;
     
     list-style-type: none;
-    gap: 4rem;
+    gap: 2.3rem;
     font-size: 1rem;
 
     :hover{
         font-weight: 800;
         text-decoration: underline;
     }
+}
+
+.nav-items{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 .nav-items > ul > li {
@@ -59,5 +70,7 @@ a{
     border: none;
     font-family: inherit;
     font-size: inherit;
-    max-width:100px;
+    width:100px;
+    position: relative;
+
  }

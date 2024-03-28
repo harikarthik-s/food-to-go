@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 
     h1{
         padding-top: 20px;
@@ -22,6 +23,10 @@
             border-radius: 2rem;
             position:relative;
             right:68px;
+
+            &:hover{
+                background-color: #fa5656;
+            }
         }
         
         .search-box{
@@ -33,7 +38,8 @@
     }
     
     .body-img{
-        width: 45%;
+        width: 25%;
+        margin-top:160px;
     }
 
     .filter{
@@ -45,7 +51,7 @@
         .filter-btn{
             cursor: pointer;
             padding: 10px;
-            background-color: rgb(255, 145, 0);
+            background-color: #ff9100;
             box-shadow: 2px 5px black;
             transition: all .3s;
             border-radius: 2rem ;
@@ -59,46 +65,56 @@
     }    
 
     .restro-container{
-        padding: 20px;
-        margin-left:50px;
+
+        width: 100%;
+        margin: 50px auto;
         display: flex;
         flex-wrap: wrap;
-        gap:25px;
-        justify-content: flex-start;
+        gap:0px;
+        justify-content: center;
         align-items: center;
     }
 }
 
 .res-card{
     width: 200px;
-    /* height: 400px; */
+    height: 400px;
     margin: 5px;
-    padding: 1.3rem;
+    padding: 0 1.3rem;
     border-radius: 10px;
     border: 1px solid white;
-    transition: .3s;
 
     &:hover{
         border: 1px solid black;
-        box-shadow: 10px 15px 20px #f0f0f0;
-        transform: scale(1.10);
+        box-shadow: 5px 10px 0px #000000;
+        transform: scale(1.02);
         transition: .3s;
+    }
+
+    h3{
+        height:56px;
     }
 
     h4{
         font-size: .7rem;
+        padding:0;
+        height: 33.6px;
+        overflow: hidden;
     }
 
     .res-logo{
         width: 100%;
         height: 200px;
-        border-radius: 3rem;    
+        border-radius: 3rem;
+        margin-top: 20px;
+        
     }    
 }
 
 .shimmer-image{
-    width: 700px;
-    height: 700px;
+    width: 330px;
+    height:330px;
+    margin-top:160px;
     background-color: #8080803c;
 }
 
@@ -129,6 +145,7 @@
   
   .contact-form {
     width: 50%;
+    margin-top:70px;
   }
   
   .contact-info {
@@ -162,7 +179,7 @@
   
   .send-btn {
     padding: 0.5rem 1rem;
-    background-color: #007bff;
+    background-color: #ff9100;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -170,13 +187,24 @@
   }
   
   .send-btn:hover {
-    background-color: #0056b3;
+    background-color: #ff9100;
   }
 
 .about{
     display:flex;
     flex-direction: column;
     align-items: center;
+    
+    h1{
+        margin-top:100px;
+    }
+    span{
+        color:#ff9100;
+    }
+    p{
+        margin: 0 10%;
+    }
 }
+
 
 

@@ -7,4 +7,7 @@ export const LOGO_URL =
 export const API_URL =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.624480699999999&page_type=DESKTOP_WEB_LISTING";
 
+export const MAIN_IMG = 
+  "https://s6.imgcdn.dev/W5Vji.png";
+
 //Named export

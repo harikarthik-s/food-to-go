@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 // import resList from "../utils/mockData";
-import logo from "../../utils/logo.png"
 import Shimmer from "./Shimmer";
-import { API_URL } from "../../utils/constants";
-import "./Body.css";
+import { API_URL, MAIN_IMG } from "../../utils/constants";
+import "../../css/Body.css";
 
 //State Variable - we use React HOOK - useState(), useEffect() - utility function given by React
 // const [resList] = useState([])
@@ -40,7 +39,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <img src={logo} alt="img" className="body-img" />
+      <img src={MAIN_IMG} alt="img" className="body-img" />
       <h1>Restaurants Near me</h1>
 
       <div className="search">
@@ -61,7 +60,9 @@ const Body = () => {
             );
           }}
         >
+          <a href="#restro-container">
           Search
+          </a>
         </button>
       </div>
 
@@ -74,7 +75,7 @@ const Body = () => {
             setfilteredrestoList(restoList);
           }}
         >
-          All Restaurants
+          <a href="#restro-container">All Restaurants</a>
         </button>
 
         <button
@@ -87,7 +88,7 @@ const Body = () => {
             setfilteredrestoList(filteredrestoList);
           }}
         >
-          Top Rated Restaurants
+          <a href="#restro-container">Top Rated Restaurants</a>
         </button>
 
         <button
@@ -100,12 +101,12 @@ const Body = () => {
             setfilteredrestoList(nearrestoList);
           }}
         >
-          Near me
+          <a href="#restro-container">Near me</a>
         </button>
 
       </div>
 
-      <div className="restro-container">
+      <div className="restro-container" id="restro-container">
         {filteredrestoList.map((restaurant, index) => (
           <RestaurantCard key={restaurant?.info?.id} resData={restaurant} />
           // <RestaurantCard key={index} resData={restaurant} />    //using index is not recommended. <<< unique keys
