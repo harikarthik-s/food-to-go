@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 // import resList from "../utils/mockData";
-import logo from "../utils/logo.png";
+import logo from "../../utils/logo.png"
 import Shimmer from "./Shimmer";
-import { API_URL } from "../utils/constants";
+import { API_URL } from "../../utils/constants";
+import "./Body.css";
 
 //State Variable - we use React HOOK - useState(), useEffect() - utility function given by React
 // const [resList] = useState([])

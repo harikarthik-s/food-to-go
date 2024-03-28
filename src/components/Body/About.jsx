@@ -1,6 +1,9 @@
+import "./Body.css";
+import { LOGO_URL } from "../../utils/constants";
+
 const About = () => {
   return (
-    <div>
+    <div className="about">
       <h1>About Food-to-Go</h1>
       <p>
         Food-to-Go is a food ordering application that allows users to order
@@ -15,6 +18,7 @@ const About = () => {
         Food-to-Go is a great way to get your favorite food delivered to your
         door.
       </p>
+      <img src={LOGO_URL} />
     </div>
   );
 };
