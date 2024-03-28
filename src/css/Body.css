@@ -40,6 +40,12 @@
     .body-img{
         width: 25%;
         margin-top:160px;
+        border-radius: 2rem;
+        transition: .3s;
+        &:hover{
+            transition: .3s;
+            transform: scale(1.1);
+        }
     }
 
     .filter{

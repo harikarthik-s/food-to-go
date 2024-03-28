@@ -40,7 +40,7 @@ const Body = () => {
   ) : (
     <div className="body">
       <img src={MAIN_IMG} alt="img" className="body-img" />
-      <h1>Restaurants Near me</h1>
+      <h1>Order your food</h1>
 
       <div className="search">
         <input
