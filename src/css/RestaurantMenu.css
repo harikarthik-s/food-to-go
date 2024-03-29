@@ -37,6 +37,7 @@
     width: 100%;
     align-self: flex-start;
     margin-bottom: 20px;
+    margin-left:20px;
 }
 
 .res-info-card{
@@ -127,4 +128,97 @@
         }
     }
     }
+}
+
+.item-card{
+    display:flex;
+    width:100%;
+    height: 200px;
+    justify-content: space-evenly;
+    
+
+    .left{
+        /* width:492px; */
+        h3{
+            color:rgba(0, 0, 0, 0.797);
+            margin: 0;
+            font-size: 1.07rem;
+        }
+        p{
+            margin: 0;
+        }
+        .price{
+            font-size: 1rem;
+            color:rgba(0, 0, 0, 0.816);
+        }
+
+        .star-rating{
+            margin: 10px 5px;
+            display:flex;
+            p{
+                font-size:.75rem;
+                font-weight: 300;
+                span{
+                    color: green;
+                    font-weight: 600;
+                }
+            }
+            .fastar{
+                display:inline;
+                fill:green;
+                margin-right: 3px;
+                height:15px;
+                width: 15px;
+            }
+        }
+
+        .desc{
+            height:100px;
+            font-weight: 300;
+            font-size:.9rem;
+        }
+        
+    }
+
+    .right{
+        margin-left:100px;
+        img{
+            width: 156px;
+            height:144px;
+            object-fit:cover;
+        }
+        button{
+            color:rgb(7, 167, 7);
+            background-color: white;
+            border-radius: 10px;
+            width:120px;
+            height:38.5px;
+            border:1px solid rgba(198, 195, 195, 0.545);
+            font-size: 1.2rem;
+            font-weight: 600;
+            position: relative;
+            left:20px;
+            bottom:10px;
+            cursor:pointer;
+            box-shadow: 0px 0px 20px rgba(128, 128, 128, 0.345);
+
+        }
+        button:hover{
+            background-color: rgba(255, 255, 255, 0.452);
+
+        }
+        p{
+            margin: 0;
+            font-size: .8rem;
+            font-weight: 300;
+            text-align:center;
+        }
+    }
+}
+
+.separator{
+    width:100%;
+    margin: 50px 0;
+    background-color: rgba(128, 128, 128, 0.449);
+    height:1px;
 }

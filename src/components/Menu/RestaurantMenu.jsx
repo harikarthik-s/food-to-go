@@ -1,14 +1,15 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import Shimmer from "./Shimmer";
+import Shimmer from "../Body/Shimmer";
 import { MENU_API_URL } from "../../utils/constants";
 import "../../css/RestaurantMenu.css";
 import { MdStars } from "react-icons/md";
+import Item from "./Item";
 
 const RestaurantMenu = () => {
   const [res, setres] = useState([]);
-  const [menu, setmenu] = useState(null);
+  const [menu, setmenu] = useState([]);
   const { resId } = useParams();
 
   useEffect(() => {
@@ -22,9 +23,9 @@ const RestaurantMenu = () => {
 
     const json = await data.json();
     setres(json?.data?.cards[2]?.card?.card?.info);
-    setmenu(json?.data?.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards[2].card?.card?.itemCards);
+    setmenu(json?.data?.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards[1].card?.card?.itemCards);
     console.log(json?.data?.cards[2].card?.card?.info);
-    console.log(json?.data?.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards[2].card?.card?.itemCards);
+    console.log(json?.data?.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards[1].card?.card?.itemCards);
   };
 
   const {
@@ -38,8 +39,6 @@ const RestaurantMenu = () => {
     totalRatingsString,
 
   } = res;
-
-  
 
   return res === 0 ? (
     <Shimmer />
@@ -73,11 +72,11 @@ const RestaurantMenu = () => {
         </div>
       </div>
       <h2>Menu</h2>
-      <ul>
-        <li>Biryani</li>
-        <li>Burger</li>
-        <li>Coke</li>
-      </ul>
+      <div className="menu-container">
+        {menu?.map((food)=>(
+          <Item key={food?.card?.info?.id} itemData={food}/>
+        ))}
+      </div>
     </div>
   );
 };
