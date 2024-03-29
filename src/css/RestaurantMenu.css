@@ -1,0 +1,130 @@
+
+.restaurant-menu{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.links{
+     width: 100%;
+    align-self: flex-start;
+    font-size: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    a{
+        color: #535665;
+        font-weight: 300;
+        width:50px;
+        &:hover{
+            color:#3f4041;
+            font-weight: 500;
+        }
+    }
+
+    span{
+        font-weight: 500;
+        &:hover{
+            font-weight: 600;
+        }
+    }
+    
+}
+
+.res-name{
+    width: 100%;
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+
+.res-info-card{
+   width: 100%;
+   height: 205.6px;
+    background: linear-gradient(rgb(255, 255, 255) -6.71%, rgb(235, 235, 242) 56.19%, rgb(223, 223, 231) 106.56%);
+    border:none;
+    border-radius: 0 0 2rem 2rem;
+    z-index: 2;
+
+    .card{
+    width:90%;
+    height: 189.6;
+    margin-left: 17px;
+    border: 1px solid #bbbdc6;
+    background-color: white;
+    border-radius: 1rem;
+    position: relative;
+    bottom: 10px;
+    z-index:10;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0px;
+    padding: 0 20px;
+
+    .rating{
+        display: flex;
+        height: 25px;
+        width: 500px;
+        margin-top: 20px;
+
+
+        .star{
+        height:23px;
+        width: 23px;
+        fill: green;
+        display: inline;
+        margin-right: 5px;
+    }
+        p{
+            margin: 0;
+            font-weight: 600;
+        }
+    }
+
+    .cuisines{
+        color: #ff8402;
+        text-decoration: underline;
+        p{
+            margin: 3px;
+            font-size: .85rem;
+            font-weight: 600;
+        }
+    }
+
+    .location{
+        margin-top: 10px;
+        margin-left: 20px;
+        p{
+            margin: 0;
+            font-size: .85rem;
+            font-weight: 600;
+            padding: 5px;
+
+            span{
+                font-weight: 300;
+            }
+        }
+
+
+        #low{
+            text-transform: lowercase;
+        }
+    }
+
+    .line{
+        background-color: #95969a5a;
+        width: 100%;
+        height: 1px;
+    }
+
+    .delivery{
+        margin-left: 20px;
+        p{
+            font-size: .8rem;
+            font-weight: 300;
+        }
+        b{
+            font-weight: 450;
+        }
+    }
+    }
+}

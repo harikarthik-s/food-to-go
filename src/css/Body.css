@@ -117,10 +117,11 @@
 }
 
 .shimmer-image{
-    width: 330px;
-    height:330px;
+    width: 350px;
+    height:350px;
     margin-top:160px;
     background-color: #8080803c;
+    border-radius: 3rem;
 }
 
 .shimmer-container{

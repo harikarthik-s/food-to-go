@@ -1,9 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import { MENU_API_URL } from "../../utils/constants";
 import "../../css/RestaurantMenu.css";
+import { MdStars } from "react-icons/md";
 
 const RestaurantMenu = () => {
   const [res, setres] = useState([]);
@@ -33,7 +34,7 @@ const RestaurantMenu = () => {
     sla,
     feeDetails,
     cuisines,
-    costForTwo,
+    costForTwoMessage,
     totalRatingsString,
 
   } = res;
@@ -44,14 +45,33 @@ const RestaurantMenu = () => {
     <Shimmer />
   ) : (
     <div className="restaurant-menu" style={{ paddingTop: 100 }}>
-      <h1>{name}</h1>
-      <p>{areaName}</p>
-      <p>{avgRating}</p>
-      <p>{sla?.slaString}</p>
-      <p>{feeDetails?.message}</p>
-      <p>{cuisines?.join(", ")}</p>
-      <p>{costForTwo}</p>
-      <p>{totalRatingsString}</p> 
+      <div className="links">
+        <Link to="/">Home /</Link>
+        <Link to="/#restro-container"> Bangalore /</Link>
+        <Link to={"/restaurants/"+resId}><span> {name}</span></Link>
+      </div>
+      <div className="res-name">
+        <h2>{name}</h2>
+      </div>
+      <div className="res-info-card">
+        <div className="card">
+          <div className="rating">
+            <MdStars className="star"/>
+            <p>{avgRating} ({totalRatingsString}) &nbsp;&#x2022;&nbsp; {costForTwoMessage}</p>
+          </div>
+          <div className="cuisines">
+            <p>{cuisines?.join(", ")}</p>
+          </div>
+          <div className="location">
+            <p>Outlet : <span>{areaName}</span></p>
+            <p id="low">{sla?.slaString}</p>
+          </div>
+          <div className="line"></div>
+          <div className="delivery">
+            <p dangerouslySetInnerHTML={{ __html: feeDetails?.message }}></p>
+          </div>
+        </div>
+      </div>
       <h2>Menu</h2>
       <ul>
         <li>Biryani</li>
