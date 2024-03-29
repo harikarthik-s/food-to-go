@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 // import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
@@ -66,7 +67,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="filter">
+      <div className="filter" id="restro-container">
         <p>Filter:</p>
         <button
           type="button"
@@ -106,9 +107,9 @@ const Body = () => {
 
       </div>
 
-      <div className="restro-container" id="restro-container">
+      <div className="restro-container" >
         {filteredrestoList.map((restaurant, index) => (
-          <RestaurantCard key={restaurant?.info?.id} resData={restaurant} />
+          <Link to={"/restaurants/" + restaurant?.info?.id}><RestaurantCard key={restaurant?.info?.id} resData={restaurant} /></Link>
           // <RestaurantCard key={index} resData={restaurant} />    //using index is not recommended. <<< unique keys
 
         ))}

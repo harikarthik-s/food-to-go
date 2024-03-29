@@ -12,30 +12,105 @@ const Shimmer = () =>{
       <div className = "shimmer-card" style={{width:100, height:50, backgroundColor:"#8080803c", borderRadius:50}}></div>
       </div>
       <div className="shimmer-container">
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
-      <div className="shimmer-card"></div>
+      <div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div>
+      <div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div>
+      <div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div>
+      <div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div>
+      <div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div>
+      <div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div>
+      <div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div>
+      <div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div>
+      <div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div><div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div>
+      <div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div><div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div>
+      <div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div><div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div>
+      <div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div><div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div>
+      <div className="shimmer-card">
+        <div style={{height:200, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:56, width:200,borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+        <div style={{height:33.6, width:200, borderRadius: 48, backgroundColor: "#8080803c", marginBottom: 20}}></div>
+      </div>
+      
     </div>
     </div>
     )

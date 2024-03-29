@@ -4,8 +4,10 @@ import Header from "./components/Header/Header";
 import Body from "./components/Body/Body";
 import About from "./components/Body/About";
 import Contact from "./components/Body/Contact"
+import RestaurantMenu from "./components/Body/RestaurantMenu";
 import Error from "./components/Body/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import RestaurantMenu from "./components/Body/RestaurantMenu";
 
 const AppLayout = () => {
   return (
@@ -28,12 +30,14 @@ const appRouter = createBrowserRouter([
       {
         path:"/about",
         element: <About/>,
-        errorElement: <Error/>,
       },
       {
         path:"/contact",
         element:<Contact/>,
-        errorElement: <Error/>,
+      },
+      {
+        path:"/restaurants/:resId",
+        element: <RestaurantMenu/>,
       }
     ],
     errorElement: <Error/>,

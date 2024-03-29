@@ -6,6 +6,7 @@ const Error404 = () => {
   const styles = {
     container: {
       display: "flex",
+      flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
       height: "100vh",
@@ -19,8 +20,8 @@ const Error404 = () => {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.text}>Error!!! <br/></h1>
-      <p style={styles.text}> {err.status}: {err.statusText || err.message}</p> 
+      <h1 style={styles.text}>Error!!! </h1>
+      <p style={styles.text}> {err.status}: {err.statusText}</p> 
     </div>
   );
 };

@@ -71,7 +71,6 @@
     }    
 
     .restro-container{
-
         width: 100%;
         margin: 50px auto;
         display: flex;
@@ -125,20 +124,22 @@
 }
 
 .shimmer-container{
-    padding: 20px;
+    width: 100%;
+    margin: 50px 300px;
     display: flex;
     flex-wrap: wrap;
-    gap:25px;
-    justify-content: space-between;
+    gap:20px;
+    justify-content: center;
     align-items: center;
+
 
     .shimmer-card{
         width: 200px;
         height: 400px;
         margin: 5px;
-        padding: 1.3rem;
         border-radius: 10px;
-        background-color: #8080803c;
+
+        
     }
 }
 
