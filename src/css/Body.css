@@ -91,7 +91,7 @@
 
     &:hover{
         border: 1px solid black;
-        box-shadow: 5px 10px 0px #000000;
+        box-shadow: 5px 10px 0px black;
         transform: scale(1.02);
         transition: .3s;
     }

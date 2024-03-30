@@ -41,7 +41,7 @@ const RestaurantMenu = () => {
   } = res;
 
   return res === 0 ? (
-    <Shimmer />
+    <MenuShimmer/>
   ) : (
     <div className="restaurant-menu" style={{ paddingTop: 100 }}>
       <div className="links">
@@ -71,7 +71,7 @@ const RestaurantMenu = () => {
           </div>
         </div>
       </div>
-      <h2>Menu</h2>
+      <h3 className="menu">Menu</h3>
       <div className="menu-container">
         {menu?.map((food)=>(
           <Item key={food?.card?.info?.id} itemData={food}/>

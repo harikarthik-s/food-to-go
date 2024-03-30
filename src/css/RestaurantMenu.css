@@ -38,6 +38,7 @@
     align-self: flex-start;
     margin-bottom: 20px;
     margin-left:20px;
+    height: 76.3px;
 }
 
 .res-info-card{
@@ -130,6 +131,10 @@
     }
 }
 
+.menu{
+    margin:50px 0;
+}
+
 .item-card{
     display:flex;
     width:100%;
@@ -138,7 +143,8 @@
     
 
     .left{
-        /* width:492px; */
+        width:443.29px;
+        margin-left:50px;
         h3{
             color:rgba(0, 0, 0, 0.797);
             margin: 0;
@@ -173,9 +179,10 @@
         }
 
         .desc{
-            height:100px;
+            height:90px;
             font-weight: 300;
             font-size:.9rem;
+            overflow:hidden;
         }
         
     }
@@ -186,6 +193,7 @@
             width: 156px;
             height:144px;
             object-fit:cover;
+            border-radius: 2rem;
         }
         button{
             color:rgb(7, 167, 7);
@@ -204,14 +212,14 @@
 
         }
         button:hover{
-            background-color: rgba(255, 255, 255, 0.452);
+            background-color: rgb(220, 218, 218);
 
         }
         p{
             margin: 0;
             font-size: .8rem;
             font-weight: 300;
-            text-align:center;
+            margin-left:40px;
         }
     }
 }
@@ -221,4 +229,9 @@
     margin: 50px 0;
     background-color: rgba(128, 128, 128, 0.449);
     height:1px;
+}
+
+.shimmer-menu {
+    display:flex;
+    justify-content: space-between;
 }
