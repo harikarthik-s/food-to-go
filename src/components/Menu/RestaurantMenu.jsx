@@ -17,37 +17,44 @@ const RestaurantMenu = () => {
   }, []);
 
   const fetchMenu = async () => {
-    const data = await fetch(
-      MENU_API_URL+ resId
-    );
+    const data = await fetch(MENU_API_URL + resId);
 
     const json = await data.json();
     setres(json?.data?.cards[2]?.card?.card?.info);
-    setmenu(json?.data?.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards[1].card?.card?.itemCards);
+    setmenu(
+      json?.data?.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards[1].card
+        ?.card?.itemCards ||
+        json?.data?.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards[2].card
+          ?.card?.itemCards
+    );
     console.log(json?.data?.cards[2].card?.card?.info);
-    console.log(json?.data?.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards[1].card?.card?.itemCards);
+    console.log(
+      json?.data?.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards[1].card
+        ?.card?.itemCards
+    );
   };
 
   const {
     name,
     areaName,
-    avgRating,  
+    avgRating,
     sla,
     feeDetails,
     cuisines,
     costForTwoMessage,
     totalRatingsString,
-
   } = res;
 
   return res === 0 ? (
-    <MenuShimmer/>
+    <MenuShimmer />
   ) : (
     <div className="restaurant-menu" style={{ paddingTop: 100 }}>
       <div className="links">
         <Link to="/">Home /</Link>
         <Link to="/#restro-container"> Bangalore /</Link>
-        <Link to={"/restaurants/"+resId}><span> {name}</span></Link>
+        <Link to={"/restaurants/" + resId}>
+          <span> {name}</span>
+        </Link>
       </div>
       <div className="res-name">
         <h2>{name}</h2>
@@ -55,14 +62,19 @@ const RestaurantMenu = () => {
       <div className="res-info-card">
         <div className="card">
           <div className="rating">
-            <MdStars className="star"/>
-            <p>{avgRating} ({totalRatingsString}) &nbsp;&#x2022;&nbsp; {costForTwoMessage}</p>
+            <MdStars className="star" />
+            <p>
+              {avgRating} ({totalRatingsString}) &nbsp;&#x2022;&nbsp;{" "}
+              {costForTwoMessage}
+            </p>
           </div>
           <div className="cuisines">
             <p>{cuisines?.join(", ")}</p>
           </div>
           <div className="location">
-            <p>Outlet : <span>{areaName}</span></p>
+            <p>
+              Outlet : <span>{areaName}</span>
+            </p>
             <p id="low">{sla?.slaString}</p>
           </div>
           <div className="line"></div>
@@ -73,8 +85,8 @@ const RestaurantMenu = () => {
       </div>
       <h3 className="menu">Menu</h3>
       <div className="menu-container">
-        {menu?.map((food)=>(
-          <Item key={food?.card?.info?.id} itemData={food}/>
+        {menu?.map((food) => (
+          <Item key={food?.card?.info?.id} itemData={food} />
         ))}
       </div>
     </div>
