@@ -37,7 +37,7 @@ const Body = () => {
 
   if (onlineStatus === false) {
     return (
-      <h1 style={{ textAlign: "center", paddingTop: "300px" }}>
+      <h1 style={{ textAlign: "center",marginTop:"0", paddingTop: "300px" }}>
         <span style={{"color":"red"}}>Looks like you're offline!!</span><br/>
         Check your Network connection{" "}
       </h1>
@@ -72,8 +72,8 @@ const Body = () => {
           <a href="#restro-container">Search</a>
         </button>
       </div>
-
-      <div className="filter" id="restro-container">
+      <div id="restro-container"></div>
+      <div className="filter" >
         <p>Filter:</p>
         <button
           type="button"

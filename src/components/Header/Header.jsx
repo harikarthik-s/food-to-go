@@ -2,6 +2,7 @@ import { LOGO_URL } from "../../utils/constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../css/Header.css";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 export const Header = () => {
   // let btnName = "Login";
@@ -28,6 +29,7 @@ export const Header = () => {
           >
             {btnName}
           </button>
+          <li className="online-status">{useOnlineStatus() == true? "🟢" : "🔴"}</li>
         </ul>
       </div>
     </div>

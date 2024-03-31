@@ -22,7 +22,7 @@ a{
     width: 250px;
     gap: 10px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 
     p{
         color: #ff9100;
@@ -59,6 +59,7 @@ a{
 .nav-items > ul > li {
     padding: 10px;
     margin: 10px;
+    position: relative;
 }
 
 .login-btn{
@@ -73,4 +74,13 @@ a{
     width:100px;
     position: relative;
 
+ }
+
+ .online-status{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    height:0px;
+    width:0px;
+    right:70px;
  }
