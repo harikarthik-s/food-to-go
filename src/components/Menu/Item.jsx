@@ -5,14 +5,14 @@ import { FaStar } from "react-icons/fa";
 
 const Item= (props) => {
   const {itemData} = props;
-  const {name, price, ratings, description, imageId} = itemData?.card?.info;
+  const {name, price, ratings, description, imageId, defaultPrice} = itemData?.card?.info;
   const {rating, ratingCountV2} = ratings?.aggregatedRating;
   return (
     <>
     <div className="item-card">
       <div className="left">
         <h3>{name}</h3>
-        <p className="price">&#8377;{price/100}</p>
+        <p className="price">&#8377;{price/100 || defaultPrice/100}</p>
         <div className="star-rating"><FaStar className="fastar"/><p ><span>{rating}</span> ({ratingCountV2})</p></div>
         <p className="desc">{description}</p>
       </div>

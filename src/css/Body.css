@@ -98,6 +98,7 @@
 
     h3{
         height:56px;
+        overflow:hidden;
     }
 
     h4{

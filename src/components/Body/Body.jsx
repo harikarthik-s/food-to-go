@@ -37,7 +37,7 @@ const Body = () => {
 
   //Conditional Rendering
   return filteredrestoList.length === 0 ? (
-    <Shimmer />
+      <Shimmer />
   ) : (
     <div className="body">
       <img src={MAIN_IMG} alt="img" className="body-img" />
