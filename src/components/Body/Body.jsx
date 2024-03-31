@@ -30,12 +30,6 @@ const Body = () => {
     console.log("Body Rendered");
   };
 
-  //Conditional Rendering
-  // if (restoList.length === 0) {
-  //   return <Shimmer />
-  // }
-
-  //Conditional Rendering
   return filteredrestoList.length === 0 ? (
       <Shimmer />
   ) : (

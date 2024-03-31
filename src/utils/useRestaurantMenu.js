@@ -6,7 +6,11 @@ const useRestaurantMenu = (resId) =>{
     const [res, setRes] = useState(null);
     const [menu, setMenu] = useState(null);
 
-    useEffect(async()=>{
+    useEffect(()=>{
+        fetchData();
+    },[]);
+
+    async function fetchData(){
         const data = await fetch(MENU_API_URL+resId);
         const json = await data.json();
         setRes(json?.data?.cards[2]?.card?.card?.info);
@@ -14,7 +18,7 @@ const useRestaurantMenu = (resId) =>{
             ?.card?.itemCards ||
             json?.data?.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards[2].card
               ?.card?.itemCards);
-    },[]);
+    }
 
     return {res, menu};
 }

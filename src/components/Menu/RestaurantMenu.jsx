@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import Shimmer from "../Body/Shimmer";
+import MenuShimmer from "./MenuShimmer";
 import "../../css/RestaurantMenu.css";
 import { MdStars } from "react-icons/md";
 import Item from "./Item";
@@ -10,7 +10,7 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
   const {res, menu} = useRestaurantMenu(resId);
 
-  if(res == null) return <Shimmer/>;
+  if(res == null) return <MenuShimmer/>;
   
   const {
     name,
@@ -23,9 +23,7 @@ const RestaurantMenu = () => {
     totalRatingsString,
   } = res;
 
-  return res === 0 ? (
-    <MenuShimmer />
-  ) : (
+  return (
     <div className="restaurant-menu" style={{ paddingTop: 100 }}>
       <div className="links">
         <Link to="/">Home /</Link>
