@@ -5,6 +5,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { API_URL, MAIN_IMG } from "../../utils/constants";
 import "../../css/Body.css";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 //State Variable - we use React HOOK - useState(), useEffect() - utility function given by React
 // const [resList] = useState([])
@@ -26,12 +27,25 @@ const Body = () => {
     setrestoList(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    setfilteredrestoList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setfilteredrestoList(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
     console.log("Body Rendered");
   };
 
-  return filteredrestoList.length === 0 ? (
-      <Shimmer />
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false) {
+    return (
+      <h1 style={{ textAlign: "center", paddingTop: "300px" }}>
+        <span style={{"color":"red"}}>Looks like you're offline!!</span><br/>
+        Check your Network connection{" "}
+      </h1>
+    );
+  }
+
+  return restoList.length == 0 ? (
+    <Shimmer />
   ) : (
     <div className="body">
       <img src={MAIN_IMG} alt="img" className="body-img" />
@@ -55,9 +69,7 @@ const Body = () => {
             );
           }}
         >
-          <a href="#restro-container">
-          Search
-          </a>
+          <a href="#restro-container">Search</a>
         </button>
       </div>
 
@@ -98,17 +110,16 @@ const Body = () => {
         >
           <a href="#restro-container">Near me</a>
         </button>
-
       </div>
 
-      <div className="restro-container" >
+      <div className="restro-container">
         {filteredrestoList.map((restaurant, index) => (
-          <Link to={"/restaurants/" + restaurant?.info?.id}><RestaurantCard key={restaurant?.info?.id} resData={restaurant} /></Link>
+          <Link to={"/restaurants/" + restaurant?.info?.id}>
+            <RestaurantCard key={restaurant?.info?.id} resData={restaurant} />
+          </Link>
           // <RestaurantCard key={index} resData={restaurant} />    //using index is not recommended. <<< unique keys
-
         ))}
       </div>
-
     </div>
   );
 };
