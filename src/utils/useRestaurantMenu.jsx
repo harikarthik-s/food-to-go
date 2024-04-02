@@ -11,7 +11,8 @@ const useRestaurantMenu = (resId) =>{
     },[]);
 
     async function fetchData(){
-        const data = await fetch(MENU_API_URL+resId);
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const data = await fetch(proxyUrl + MENU_API_URL + resId);
         const json = await data.json();
         setRes(json?.data?.cards[2]?.card?.card?.info);
         setMenu(json?.data?.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards[1].card
