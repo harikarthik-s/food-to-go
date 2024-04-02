@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 // import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 import { API_URL, MAIN_IMG } from "../../utils/constants";
@@ -14,6 +14,8 @@ const Body = () => {
   const [restoList, setrestoList] = useState([]);
   const [filteredrestoList, setfilteredrestoList] = useState([]);
   const [searchText, setsearchText] = useState("");
+  //HigherOrderComponent - Takes a component and adds some functionality
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -30,15 +32,16 @@ const Body = () => {
     setfilteredrestoList(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    console.log("Body Rendered");
+    console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
 
   const onlineStatus = useOnlineStatus();
 
   if (onlineStatus === false) {
     return (
-      <h1 style={{ textAlign: "center",marginTop:"0", paddingTop: "300px" }}>
-        <span style={{"color":"red"}}>Looks like you're offline!!</span><br/>
+      <h1 style={{ textAlign: "center", marginTop: "0", paddingTop: "300px" }}>
+        <span style={{ color: "red" }}>Looks like you're offline!!</span>
+        <br />
         Check your Network connection{" "}
       </h1>
     );
@@ -73,7 +76,7 @@ const Body = () => {
         </button>
       </div>
       <div id="restro-container"></div>
-      <div className="filter" >
+      <div className="filter">
         <p>Filter:</p>
         <button
           type="button"
@@ -114,8 +117,16 @@ const Body = () => {
 
       <div className="restro-container">
         {filteredrestoList.map((restaurant, index) => (
-          <Link to={"/restaurants/" + restaurant?.info?.id}>
-            <RestaurantCard key={restaurant?.info?.id} resData={restaurant} />
+          <Link
+            to={"/restaurants/" + restaurant?.info?.id}
+            key={restaurant?.info?.id}
+          >
+            {restaurant?.info?.aggregatedDiscountInfoV3?.header  ? (
+              <RestaurantCardPromoted resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
+            {/* <RestaurantCard resData={restaurant} /> */}
           </Link>
           // <RestaurantCard key={index} resData={restaurant} />    //using index is not recommended. <<< unique keys
         ))}
