@@ -22,7 +22,8 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(`${API_URL}`);
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const data = await fetch(proxyUrl + API_URL);
     const json = await data.json();
 
     // optional chaining
