@@ -7,6 +7,7 @@ import Contact from "./components/Body/Contact"
 // import RestaurantMenu from "./components/Menu/RestaurantMenu";
 import MenuShimmer from "./components/Menu/MenuShimmer";
 import Error from "./components/Body/Error";
+import ScrollToTop from "./components/ScrollToTop";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const RestaurantMenu = lazy(
@@ -17,7 +18,9 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <Outlet />
+      <ScrollToTop>
+        <Outlet />
+      </ScrollToTop>
     </div>
   );
 };
