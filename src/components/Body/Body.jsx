@@ -22,8 +22,7 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    const data = await fetch(proxyUrl + API_URL);
+    const data = await fetch(API_URL);
     const json = await data.json();
 
     // optional chaining
@@ -123,9 +122,9 @@ const Body = () => {
             key={restaurant?.info?.id}
           >
             {restaurant?.info?.aggregatedDiscountInfoV3?.header  ? (
-              <RestaurantCardPromoted resData={restaurant} />
+              <RestaurantCardPromoted resData={restaurant} key={restaurant?.info?.id} />
             ) : (
-              <RestaurantCard resData={restaurant} />
+              <RestaurantCard resData={restaurant} key={restaurant?.info?.id} />
             )}
             {/* <RestaurantCard resData={restaurant} /> */}
           </Link>
