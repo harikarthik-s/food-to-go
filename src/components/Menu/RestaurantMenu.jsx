@@ -5,10 +5,11 @@ import "../../css/RestaurantMenu.css";
 import { MdStars } from "react-icons/md";
 import Item from "./Item";
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
-  const {res, menu} = useRestaurantMenu(resId);
+  const {res, categories} = useRestaurantMenu(resId);
 
   if(res == null) return <MenuShimmer/>;
   
@@ -61,9 +62,9 @@ const RestaurantMenu = () => {
       </div>
       <h3 className="menu">Menu</h3>
       <div className="menu-container">
-        {menu?.map((food) => (
-          <Item key={food?.card?.info?.id} itemData={food} />
-        ))}
+        {
+          categories.map((category, index) => <RestaurantCategory data={category.card?.card} key={category.card?.card?.title}/>)
+        }
       </div>
     </div>
   );
