@@ -3,12 +3,13 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Item from "./Item";
 
 const RestaurantCategory = (props) =>{
-    const {data} = props;
+    const {data, selected, setSelectedIndex} = props;
     const {title} = data;
-    const [selected, setSelected] = useState(false);
+    // const [selected, setSelected] = useState(false);
 
     const toggle = () => {
-        setSelected(!selected); 
+        // setSelected(!selected); 
+        setSelectedIndex();
     };
     
     return (

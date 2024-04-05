@@ -1,18 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import { useParams, Link } from "react-router-dom";
 import MenuShimmer from "./MenuShimmer";
 import "../../css/RestaurantMenu.css";
 import { MdStars } from "react-icons/md";
-import Item from "./Item";
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
-  const {res, categories} = useRestaurantMenu(resId);
+  const { res, categories } = useRestaurantMenu(resId);
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
-  if(res == null) return <MenuShimmer/>;
-  
+  if (res == null) return <MenuShimmer />;
+
   const {
     name,
     areaName,
@@ -62,9 +62,14 @@ const RestaurantMenu = () => {
       </div>
       <h3 className="menu">Menu</h3>
       <div className="menu-container">
-        {
-          categories.map((category, index) => <RestaurantCategory data={category.card?.card} key={category.card?.card?.title}/>)
-        }
+        {categories.map((category, index) => (
+          <RestaurantCategory
+            data={category.card?.card}
+            key={category.card?.card?.title}
+            selected = {index === selectedIndex? true : false}
+            setSelectedIndex = {()=>setSelectedIndex(index)}
+          />
+        ))}
       </div>
     </div>
   );

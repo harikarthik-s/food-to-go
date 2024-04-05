@@ -280,7 +280,7 @@
 
 .accordion-content-description.show{ 
     height:auto; 
-    max-height: 500rem; 
+    max-height: 700rem; 
     transition:all 0.2s linear; 
     padding-top:20px;
 }
