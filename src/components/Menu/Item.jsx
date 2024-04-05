@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MENU_IMG } from "../../utils/constants";
 import "../../css/RestaurantMenu.css"
 import { FaStar } from "react-icons/fa";
+import UserContext from "../../utils/UserContext";
 
 const Item= (props) => {
   const {itemData} = props;
   const {name, price, ratings, description, imageId, defaultPrice} = itemData?.card?.info;
   const {rating, ratingCountV2} = ratings?.aggregatedRating;
+  const {cartItems, setUserCartItems} = useContext(UserContext);
   return (
     <>
     <div className="item-card">
@@ -18,7 +20,7 @@ const Item= (props) => {
       </div>
       <div className="right">
         <img src={MENU_IMG+imageId} alt="item-logo" />
-        <button>ADD</button>
+        <button onClick={() => setUserCartItems(cartItems+1)}>ADD</button>
         <p>Customisable</p>
       </div>
     </div>

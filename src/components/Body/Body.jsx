@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 // import resList from "../utils/mockData";
@@ -6,6 +6,7 @@ import Shimmer from "./Shimmer";
 import { API_URL, MAIN_IMG } from "../../utils/constants";
 import "../../css/Body.css";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import UserContext from "../../utils/UserContext";
 
 //State Variable - we use React HOOK - useState(), useEffect() - utility function given by React
 // const [resList] = useState([])
@@ -16,6 +17,7 @@ const Body = () => {
   const [searchText, setsearchText] = useState("");
   //HigherOrderComponent - Takes a component and adds some functionality
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+  const {loggedInUser} = useContext(UserContext);
 
   useEffect(() => {
     fetchData();
@@ -32,7 +34,6 @@ const Body = () => {
     setfilteredrestoList(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
 
   const onlineStatus = useOnlineStatus();
@@ -52,7 +53,7 @@ const Body = () => {
   ) : (
     <div className="body">
       <img src={MAIN_IMG} alt="img" className="body-img" />
-      <h1>Order your food</h1>
+      <h1>Hey {loggedInUser}, order your food now</h1>
 
       <div className="search">
         <input

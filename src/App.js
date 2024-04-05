@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from "react";
+import React, {lazy, Suspense, useState, useEffect} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header/Header";
 import Body from "./components/Body/Body";
@@ -9,19 +9,38 @@ import MenuShimmer from "./components/Menu/MenuShimmer";
 import Error from "./components/Body/Error";
 import ScrollToTop from "./components/ScrollToTop";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import UserContext from "./utils/UserContext";
 
 const RestaurantMenu = lazy(
   () => import("./components/Menu/RestaurantMenu")
 );
 
 const AppLayout = () => {
+  const [userName, setUserName] = useState();
+  const [userCartItems, setUserCartItems] = useState();
+
+  //authentication
+  useEffect(() => {
+    //API cal
+    const data = {
+      user : "Hari",
+      cartItems : 3
+    }
+    setUserName(data.user);
+    setUserCartItems(data.cartItems);
+  }, []);
+  
   return (
+    <UserContext.Provider value={{loggedInUser: userName, cartItems:userCartItems, setUserCartItems}}>
     <div className="app">
+      
       <Header />
       <ScrollToTop>
         <Outlet />
       </ScrollToTop>
+      
     </div>
+    </UserContext.Provider>
   );
 };
 

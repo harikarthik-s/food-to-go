@@ -1,13 +1,17 @@
 import "../../css/Body.css";
+import UserContext from "../../utils/UserContext";
 import { LOGO_URL } from "../../utils/constants";
 
 const About = () => {
+  const {loggedInUser} = useContext(UserContext);
+
   return (
     <div className="about">
       <h1>
         About <span>Food-to-Go</span>
       </h1>
       <p>
+        Hi {loggedInUser}
         Food-to-Go is a user-friendly and convenient food ordering application
         that empowers users to order their favorite dishes from the comfort of
         their own homes. With a wide selection of restaurants to choose from,
